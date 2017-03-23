@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323074045) do
+ActiveRecord::Schema.define(version: 20170323080111) do
 
   create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -54,6 +54,14 @@ ActiveRecord::Schema.define(version: 20170323074045) do
     t.text     "badge",            limit: 65535
   end
 
+  create_table "technologies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.integer  "portfolio_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["portfolio_id"], name: "index_technologies_on_portfolio_id", using: :btree
+  end
+
   create_table "topics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.datetime "created_at", null: false
@@ -61,4 +69,5 @@ ActiveRecord::Schema.define(version: 20170323074045) do
   end
 
   add_foreign_key "blogs", "topics"
+  add_foreign_key "technologies", "portfolios"
 end
