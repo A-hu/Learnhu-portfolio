@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :portfolios, except: [:show]
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
+  get 'portfolios/angulars', to: 'portfolios#angular', as: 'portfolio_angular'
 
   resources :blogs do
     member do
