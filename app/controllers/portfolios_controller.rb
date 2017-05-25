@@ -13,7 +13,7 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    @portfolio_item = Portfolio.new(portfolio_item_params)
+    @portfolio_item = Portfolio.new(portfolio_params)
 
     respond_to do |format|
       if @portfolio_item.save
@@ -32,7 +32,7 @@ class PortfoliosController < ApplicationController
     @portfolio_item = Portfolio.find(params[:id])
 
     respond_to do |format|
-      if @portfolio_item.update(portfolio_item_params)
+      if @portfolio_item.update(portfolio_params)
         format.html { redirect_to portfolios_path, notice: 'The record successfully updated.' }
       else
         format.html { render :edit }
@@ -46,7 +46,7 @@ class PortfoliosController < ApplicationController
 
   def destroy
     @portfolio_item = Portfolio.find(params[:id])
-    @portfolio_item.destroy 
+    @portfolio_item.destroy
 
     respond_to do |format|
       format.html { redirect_to portfolios_path, notice: 'This portfolio successfully deleted' } 
@@ -55,7 +55,11 @@ class PortfoliosController < ApplicationController
 
   private
 
-  def portfolio_item_params
-    params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name])
+  def portfolio_params
+    params.require(:portfolio).permit(:title,
+                                      :subtitle,
+                                      :body,
+                                      technologies_attributes: [:name]
+                                     )
   end
 end
