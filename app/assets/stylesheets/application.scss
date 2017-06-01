@@ -13,4 +13,7 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap";
+
+.top a {
+  color: brown;
+}
