@@ -14,17 +14,28 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="site-wrapper">
 
-    <%= render "shared/nav", location: 'top' %>
+      <div class="site-wrapper-inner">
 
-    <%= login_helper %>
+        <div class="cover-container">
 
-    <%= yield %>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
 
-    <%= copyright "Learnhu Louis", Time.now.year %>
+          <%= render "shared/application_nav", location: 'top' %>
 
-    <%= source_helper("application") %>
+          <%= login_helper %>
+
+          <%= yield %>
+
+          <%= copyright "Learnhu Louis", Time.now.year %>
+
+          <%= source_helper("application") %>
+        </div>
+
+      </div>
+
+    </div>
   </body>
 </html>
