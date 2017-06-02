@@ -20,16 +20,11 @@
 
         <div class="cover-container">
 
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-
           <%= render "shared/application_nav", location: 'top' %>
-
-          <%= login_helper %>
 
           <%= yield %>
 
-          <%= copyright "Learnhu Louis", Time.now.year %>
+          <%= render "shared/application_footer" %>
 
           <%= source_helper("application") %>
         </div>

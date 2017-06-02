@@ -29,6 +29,10 @@ a:hover {
   color: #fff;
 }
 
+.masthead-brand a {
+  color: #fff;
+}
+
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
@@ -175,6 +179,6 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 42rem;
+    width: 55rem;
   }
 }
