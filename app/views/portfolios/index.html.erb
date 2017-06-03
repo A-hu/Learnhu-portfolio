@@ -1,9 +1,9 @@
-<h1>Portfolio Items</h1>
+<div class="album text-muted">
+  <div class="container">
 
-<%= link_to "Create New Item", new_portfolio_path if logged_in?(:site_admin) %>
+    <div class="row">
+      <%= render partial: 'portfolio_item', collection: @portfolio_items, spacer_template: 'portfolio_ruler' %>
+    </div>
 
-<% cache do %>
-  <div>
-    <%= render partial: 'portfolio_item', collection: @portfolio_items, spacer_template: 'portfolio_ruler' %>
   </div>
-<% end %>
+</div>
