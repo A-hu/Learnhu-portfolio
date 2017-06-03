@@ -15,20 +15,9 @@
 
   <body>
 
-    <!-- Start of nav  -->
-    <%= render "blogs/blog_nav" %> <!-- End of nav  -->
+    <%= render "blogs/blog_nav" %>
+    <%= render "shared/blog_masthead" %>
 
-    <!-- Start of blog header  -->
-    <div class="blog-header">
-      <div class="container">
-        <h1 class="blog-title">Learnhu</h1>
-        <p class="lead blog-description">An example blog template built with Bootstrap.</p>
-        <%= link_to 'Write a New Blog', new_blog_path, class: 'btn btn-warning' if logged_in?(:site_admin)%>
-      </div>
-    </div>
-    <!-- End of blog header  -->
-
-    <!-- Start of container and raw element  -->
     <div class="container">
       <div class="row">
 
@@ -37,18 +26,10 @@
         <%= render "shared/blog_sidebar" %>
       </div>
 
-        <!-- Start of footer -->
-        <footer class="blog-footer">
-          <p>Blog template built for <a href="https://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-          <p>
-          <a href="#">Back to top</a>
-          </p>
-        </footer>
-        <!-- End of footer -->
+      <%= render "shared/blog_footer" %>
 
-        <%= source_helper("blog") %>
+      <%= source_helper("blog") %>
     </div>
-    <!-- End of container and raw element  -->
 
   </body>
 
