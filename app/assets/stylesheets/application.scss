@@ -51,7 +51,6 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
 }
 body {
   color: #fff;
@@ -200,6 +199,12 @@ body {
   text-align: right;
 }
 
+.signin > .card {
+  width: 35rem;
+  margin: 0 auto;
+  float: none;
+}
+
 .login > .card {
   width: 22rem;
   margin: 0 auto;
@@ -209,4 +214,38 @@ body {
 .app-nav span {
   margin-left: 10px;
   margin-right: 10px;
+}
+
+#background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: image-url('home.jpg') no-repeat;
+  background-size: cover;
+}
+
+#background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: image-url('home.jpg') no-repeat;
+  background-size: cover;
+}
+
+.app-footer {
+  color: white;
 }
