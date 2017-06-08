@@ -55,6 +55,8 @@ body {
   vertical-align: top;
 }
 .cover-container {
+  margin-top: 10%;
+  margin-bottom: 10%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -161,7 +163,7 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 55rem;
+    width: 60rem;
   }
 }
 
@@ -231,4 +233,17 @@ body {
 
 .app-footer {
   color: white;
+}
+
+.tech-news {
+  color: black;
+  margin: 20px;
+}
+
+.tech-news a {
+  color: green;
+}
+
+.tech-news > .card {
+  padding: 30px;
 }
