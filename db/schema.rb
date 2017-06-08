@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170603145411) do
+ActiveRecord::Schema.define(version: 20170608074405) do
 
   create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20170603145411) do
     t.integer  "topic_id"
     t.index ["slug"], name: "index_blogs_on_slug", unique: true, using: :btree
     t.index ["topic_id"], name: "index_blogs_on_topic_id", using: :btree
+  end
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "content",    limit: 65535
+    t.integer  "user_id"
+    t.integer  "blog_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["blog_id"], name: "index_comments_on_blog_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "friendly_id_slugs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -89,5 +99,7 @@ ActiveRecord::Schema.define(version: 20170603145411) do
   end
 
   add_foreign_key "blogs", "topics"
+  add_foreign_key "comments", "blogs"
+  add_foreign_key "comments", "users"
   add_foreign_key "technologies", "portfolios"
 end
