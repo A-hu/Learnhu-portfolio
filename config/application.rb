@@ -18,5 +18,6 @@ Bundler.require(*Rails.groups)
 
 module LearnhuPortfolio
   class Application < Rails::Application
+    config.eager_load_paths << "#{Rails.root}/lib"
   end
 end
