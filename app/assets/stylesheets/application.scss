@@ -171,6 +171,10 @@ body {
  * Custom styles
  */
 
+.card h1 {
+  margin-bottom: 2rem;
+}
+
 .card-block {
   color: black;
   text-align: left;
@@ -246,4 +250,27 @@ body {
 
 .tech-news > .card {
   padding: 30px;
+}
+
+.app-card-container {
+  color: white;
+  text-align: left;
+}
+
+.app-card-container a {
+  color: pink;
+}
+
+.app-card-container > .card {
+  padding: 20px;
+  background-color: rgba(0,0,0,.5);
+}
+
+.profile-img {
+  border: 1px solid grey;
+}
+
+.contact-words {
+  line-height: 3rem;
+  text-align: center;
 }
