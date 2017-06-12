@@ -1,3 +1,5 @@
 <div class='topic-style'>
   <%= link_to "#" + topic.title, topic, class: 'btn btn-default btn-sm' %>
+  <%= link_to fa_icon('pencil-square-o'), edit_topic_path(topic) %>
+  <%= link_to fa_icon('trash'), topic, method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>
