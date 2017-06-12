@@ -186,6 +186,7 @@ h6, .h6 {
   float: right;
   font-size: .7em;
   font-style: italic;
+  margin-top: 2em;
 }
 
 .comment-name {
@@ -206,4 +207,10 @@ h6, .h6 {
 
 .blog-sidebar-source {
   margin-top: 20px;
+}
+
+.blog-main img {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
 }
