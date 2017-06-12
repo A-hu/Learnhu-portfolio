@@ -4,5 +4,6 @@
 
   <%= render partial: "blogs/admin_actions", locals: { blog: blog } %>
 
-  <p><%= blog.body %></p>
+  <p><%= truncate blog.body, length: 160 %></p>
+  <p><%= link_to 'read more...', blog %></p>
 </div>
