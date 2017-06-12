@@ -8,9 +8,9 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     if logged_in? :site_admin
-      @blogs = Blog.recent.page(params[:page]).per(5)
+      @blogs = Blog.prior.recent.page(params[:page]).per(5)
     else
-      @blogs = Blog.published.recent.page(params[:page]).per(5)
+      @blogs = Blog.prior.not_draft.recent.page(params[:page]).per(5)
     end
     @page_title = "My Portfolio Blog"
   end
@@ -18,7 +18,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    if logged_in?(:site_admin) || @blog.published?
+    if logged_in?(:site_admin) || @blog.published? || @blog.sticky?
       @blog = Blog.includes(:comments).friendly.find(params[:id])
       @comment = Comment.new
 
@@ -79,11 +79,18 @@ class BlogsController < ApplicationController
   end
 
   def toggle_status
-    @blog.draft? ? @blog.published! : @blog.draft!
-    redirect_to blogs_url, notice: 'Post status has been updated.'
+    if @blog.draft?
+      @blog.published!
+    elsif @blog.published?
+      @blog.sticky!
+    else
+      @blog.draft!
+    end
+    redirect_to blogs_url, notice: "Post status has been updated to #{@blog.status}."
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_blog
     @blog = Blog.friendly.find(params[:id])

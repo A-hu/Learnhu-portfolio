@@ -25,6 +25,14 @@ module BlogsHelper
   end
 
   def blog_status_color blog
-    'color: red;' if blog.draft?
+    if blog.draft?
+      'color: red;'
+    elsif blog.sticky?
+      'color: gold;'
+    end
+  end
+
+  def sticky_helper blog
+    "<span style='color: gold'>&#9733;</span>  ".html_safe if blog.sticky?
   end
 end
