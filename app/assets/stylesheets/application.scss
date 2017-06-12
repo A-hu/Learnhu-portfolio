@@ -14,6 +14,7 @@ a:hover {
 
 .masthead-brand a {
   color: #fff;
+  color: rgba(255,255,255,.8);
 }
 
 /* Custom default button */
@@ -82,6 +83,7 @@ h6, .h6 {
  */
 
 .masthead {
+  color: white;
   margin-bottom: 2rem;
 }
 
@@ -226,22 +228,7 @@ h6, .h6 {
   z-index: -100;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  background: image-url('home.jpg') no-repeat;
-  background-size: cover;
-}
-
-#background {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  background: image-url('home.jpg') no-repeat;
+  background: image-url('desktop.jpg') no-repeat;
   background-size: cover;
 }
 
