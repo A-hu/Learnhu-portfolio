@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  before_action :about
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   before_action :set_sidebar_topics, except: [:update, :create, :destroy, :toggle_status]
   layout "blog"
@@ -103,5 +104,9 @@ class BlogsController < ApplicationController
 
   def set_sidebar_topics
     @side_bar_topics = Topic.with_blogs
+  end
+
+  def about
+    @brief_about = User.find_by_roles( :site_admin ).brief_about
   end
 end

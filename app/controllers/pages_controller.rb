@@ -2,9 +2,11 @@ class PagesController < ApplicationController
   def home
     @posts = Blog.all
     @skills = Skill.all
+    @brief_about = User.find_by_roles( :site_admin ).brief_about
   end
 
   def about
+    @about = User.find_by_roles( :site_admin ).about
     @skills = Skill.all
   end
 
