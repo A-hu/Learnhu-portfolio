@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   end
 
   get '/about-me', to: 'pages#about'
-  get '/contact', to: 'pages#contact'
   get '/tech-news', to: 'pages#tech_news'
 
   mount ActionCable.server => '/cable'

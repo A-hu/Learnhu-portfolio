@@ -11,7 +11,7 @@ module ApplicationHelper
 
   def source_helper(styles)
     if session[:source]
-      greeting = "Thanks for visiting me from #{session[:source]}, please feel free to #{ link_to 'Contact me', contact_path } if you'd like to work together."
+      greeting = "Thanks for visiting me from #{session[:source]}, please feel free to #{ link_to 'Contact me', about_me_path } if you'd like to work together."
       content_tag(:div, greeting.html_safe, class: styles)
     end
   end
@@ -23,16 +23,8 @@ module ApplicationHelper
   def nav_items
     [
       {
-        url: root_path,
-        title: "Home"
-      },
-      {
         url: about_me_path,
-        title: "About Me"
-      },
-      {
-        url: contact_path,
-        title: "Contact"
+        title: "About"
       },
       {
         url: blogs_path,
@@ -44,7 +36,7 @@ module ApplicationHelper
       },
       {
         url: tech_news_path,
-        title: "Tech News"
+        title: "News"
       }
     ]
   end
