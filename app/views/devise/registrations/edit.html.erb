@@ -46,6 +46,17 @@
               <%= f.label :introduction %>
               <%= f.text_area :about, class: 'form-control', rows: 15, placeholder: '(50 ~ 300 words)' %>
             </div>
+
+            <h2>Skills</h2>
+            <div class="form-group">
+              <%= f.fields_for :skills do |skill_form| %>
+                <%= render 'skill_fields', f: skill_form %>
+              <% end %>
+
+              <div>
+                <%= link_to_add_association 'Add Skill', f, :skills, class: 'btn btn-info' %>
+              </div>
+            </div>
           <% end %>
 
           <div class="form-group">
