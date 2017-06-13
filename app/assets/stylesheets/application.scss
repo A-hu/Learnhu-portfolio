@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "gritter";
+@import "toggle_nav";
 
 /*
  * Globals
@@ -278,4 +279,8 @@ h6, .h6 {
 
 .skill {
   margin: 10px auto;
+}
+
+.dropbtn img {
+  margin-left: 50%;
 }

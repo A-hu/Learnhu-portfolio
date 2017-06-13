@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "jquery-ui";
 @import "gritter";
+@import "toggle_nav";
 
 @font-face {
   font-family: 'Lato';
@@ -98,4 +99,12 @@ footer p {
   position: fixed;
   bottom: 20px;
   right: 30px;
+}
+
+.nav-link {
+  text-align: center;
+}
+
+.nav-link:hover {
+  color: white;
 }
