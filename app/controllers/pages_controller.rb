@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   def about
     @about = User.find_by_roles( :site_admin ).about
-    @skills = Skill.all
+    @skills = User.find_by_roles( :site_admin ).skills
   end
 
   def contact

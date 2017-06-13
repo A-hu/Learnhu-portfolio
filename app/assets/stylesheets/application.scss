@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 @import "gritter";
 @import "toggle_nav";
 
@@ -193,6 +194,21 @@ h6, .h6 {
 .card-block {
   color: black;
   text-align: left;
+  margin: 5px auto;
+}
+
+.card-block a {
+  text-align: center;
+  font-size: 5em;
+}
+
+.card-block strong {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.card-block em {
+  text-align: right;
 }
 
 .auth-links a {
@@ -258,7 +274,11 @@ h6, .h6 {
 }
 
 .app-card-container a {
-  color: pink;
+  color: #0275D8;
+}
+
+.app-card-container a:hover {
+  color: #014C8C;
 }
 
 .app-card-container > .card {
@@ -275,14 +295,14 @@ h6, .h6 {
   text-align: center;
 }
 
-.card-block {
-  margin: 5px auto;
-}
-
 .skill {
   margin: 10px auto;
 }
 
 .dropbtn img {
   margin-left: 50%;
+}
+
+.about-content button {
+  margin: 1em;
 }
