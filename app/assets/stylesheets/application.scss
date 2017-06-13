@@ -86,6 +86,7 @@ h6, .h6 {
 .masthead {
   color: white;
   margin-bottom: 2rem;
+  z-index: 1;
 }
 
 .masthead-brand {
@@ -143,6 +144,7 @@ h6, .h6 {
 
 .mastfoot {
   color: rgba(255,255,255,.5);
+  z-index: -1;
 }
 
 
