@@ -1,5 +1,7 @@
 <div class="blog-post">
-  <h2 class="blog-post-title"><%= sticky_helper blog %><%= link_to blog.title.upcase, blog %></h2>
+  <h2 class="blog-post-title"><%= sticky_helper blog %><%= link_to blog.title.upcase, blog %>
+    <span class='pull-right like-index'> <%= blog.like_users.count %> <%= fa_icon('thumbs-up') %></span>
+  </h2>
   <p class="blog-post-meta">Published: <%= distance_of_time_in_words(blog.created_at, Time.now) %></p>
 
   <%= render partial: "blogs/admin_actions", locals: { blog: blog } %>

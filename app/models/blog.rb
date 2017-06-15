@@ -9,6 +9,9 @@ class Blog < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
+  has_many :like_joins, as: :likable
+  has_many :like_users, source: :user, through: :like_joins, as: :blogs
+
   def self.recent
     order('created_at DESC')
   end

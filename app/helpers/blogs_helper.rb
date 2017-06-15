@@ -33,6 +33,6 @@ module BlogsHelper
   end
 
   def sticky_helper blog
-    "<span style='color: gold'>&#9733;</span>  ".html_safe if blog.sticky?
+    fa_icon "bookmark" if blog.sticky?
   end
 end

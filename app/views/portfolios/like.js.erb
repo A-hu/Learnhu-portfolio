@@ -1,0 +1,1 @@
+$('#portfolio-like-<%= @portfolio_item.id %>').html("<%= j(render partial: 'like', locals: {portfolio_item: @portfolio_item})%>")

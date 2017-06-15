@@ -1,5 +1,9 @@
 class Portfolio < ApplicationRecord
   has_many :technologies
+
+  has_many :like_joins, as: :likable
+  has_many :like_users, source: :user, through: :like_joins, as: :portfolios
+
   accepts_nested_attributes_for :technologies,
                                 allow_destroy: true,
                                 reject_if: lambda { |attrs| attrs['name'].blank? }

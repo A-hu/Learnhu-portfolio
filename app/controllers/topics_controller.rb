@@ -1,6 +1,8 @@
 class TopicsController < ApplicationController
+  before_action :about
   before_action :set_sidebar_topics
-  before_action :find_topic, only: [:edit, :update, :destroy]
+  before_action :find_topic, only: [:edit, :update, :destroy, :like]
+  before_action :check_current_user, only: [:like]
   layout 'blog'
 
   def index
@@ -53,6 +55,16 @@ class TopicsController < ApplicationController
     end
   end
 
+  def like
+    like_topics = current_user.like_topics
+    like_topics.include?(@topic) ? like_topics.delete(@topic) : like_topics << @topic
+
+    respond_to do |format|
+      format.html { redirect_to @topic }
+      format.js
+    end
+  end
+
   private
 
   def topic_params
@@ -65,5 +77,9 @@ class TopicsController < ApplicationController
 
   def set_sidebar_topics
     @side_bar_topics = Topic.with_blogs
+  end
+
+  def about
+    @brief_about = User.find_by_roles( :site_admin ).brief_about
   end
 end

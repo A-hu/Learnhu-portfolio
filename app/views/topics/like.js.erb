@@ -1,0 +1,5 @@
+<% if current_user.like_topics.include?(@topic) %>
+    $('#topic-like i').css('opacity', 1);
+<% else %>
+    $('#topic-like i').css('opacity', 0.3 );
+<% end %>

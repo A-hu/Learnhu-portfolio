@@ -193,13 +193,7 @@ h6, .h6 {
 
 .card-block {
   color: black;
-  text-align: left;
   margin: 5px auto;
-}
-
-.card-block a {
-  text-align: center;
-  font-size: 5em;
 }
 
 .card-block strong {
@@ -305,4 +299,17 @@ h6, .h6 {
 
 .about-content button {
   margin: 1em;
+}
+
+#contact a {
+  text-align: center;
+  font-size: 5em;
+}
+
+.btn i {
+  font-size: 2.5em;
+}
+
+.container button {
+  margin: 5%;
 }

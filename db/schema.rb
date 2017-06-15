@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613030319) do
+ActiveRecord::Schema.define(version: 20170614071548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,16 @@ ActiveRecord::Schema.define(version: 20170613030319) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "like_joins", force: :cascade do |t|
+    t.integer "likable_id"
+    t.string "likable_type"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["likable_id", "likable_type"], name: "index_like_joins_on_likable_id_and_likable_type"
+    t.index ["user_id"], name: "index_like_joins_on_user_id"
+  end
+
   create_table "portfolios", id: :serial, force: :cascade do |t|
     t.string "title"
     t.string "subtitle"
@@ -139,6 +149,7 @@ ActiveRecord::Schema.define(version: 20170613030319) do
   add_foreign_key "blogs", "topics"
   add_foreign_key "comments", "blogs"
   add_foreign_key "comments", "users"
+  add_foreign_key "like_joins", "users"
   add_foreign_key "skills", "users"
   add_foreign_key "technologies", "portfolios"
 end

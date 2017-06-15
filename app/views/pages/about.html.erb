@@ -25,6 +25,7 @@
       <div class="col-md-8 about-content">
 
         <p><%= @about %></p>
+        <div class="container">
         <button
            class="btn btn-info"
            type="button"
@@ -33,23 +34,40 @@
            aria-expanded="false"
            aria-controler="jobHistory"
            >
-           Job History
+           <%= fa_icon('history') %>
         </button>
-          <div class="collapse" id="jobHistory">
+        <div class="collapse" id="jobHistory">
+          <div class="card card-block">
+            Diabnext
+            <strong>System Engineer</strong>
+            <em>Dec. 2016 ~ present</em>
+          </div>
+          <div class="card card-block">
+            Puzi Hospital
+            <strong>Hospital Pharmacist</strong>
+            <em>Sep. 2015 ~ Aug. 2016</em>
+          </div>
+          <div class="card card-block">
+            Etone Medicine Union
+            <strong>Registered Pharmacist</strong>
+            <em>Dec. 2012 ~ Jul. 2015</em>
+          </div>
+        </div>
+
+        <button
+               class="btn btn-info"
+               type="button"
+               data-toggle="collapse"
+               data-target="#cert"
+               aria-expanded="false"
+               aria-controler="cert"
+               >
+               <%= fa_icon('drivers-license') %>
+        </button>
+          <div class="collapse" id="cert">
             <div class="card card-block">
-              Diabnext
-              <strong>System Engineer</strong>
-              <em>Dec. 2016 ~ present</em>
-            </div>
-            <div class="card card-block">
-              Puzi Hospital
-              <strong>Hospital Pharmacist</strong>
-              <em>Sep. 2015 ~ Aug. 2016</em>
-            </div>
-            <div class="card card-block">
-              Etone Medicine Union
-              <strong>Registered Pharmacist</strong>
-              <em>Dec. 2012 ~ Jul. 2015</em>
+              <strong>Pharmacist certificate</strong>
+              <em>Dec. 2012 ~ present</em>
             </div>
           </div>
 
@@ -57,60 +75,44 @@
                  class="btn btn-info"
                  type="button"
                  data-toggle="collapse"
-                 data-target="#cert"
+                 data-target="#education"
                  aria-expanded="false"
-                 aria-controler="cert"
+                 aria-controler="education"
                  >
-                 Certificates
+                 <%= fa_icon('graduation-cap') %>
           </button>
-            <div class="collapse" id="cert">
+          <div class="collapse" id="education">
+            <div class="card card-block">
+              National Chiao Tung University
+              <strong>Master, Bioinformatics and Systems Biology</strong>
+              <em>2011 ~ 2015</em>
+            </div>
+            <div class="card card-block">
+              China Medical University
+              <strong>Bachelor, School of Pharmacy</strong>
+              <em>2006 ~ 2011</em>
+            </div>
+          </div>
+
+          <button
+                 class="btn btn-primary"
+                 type="button"
+                 data-toggle="collapse"
+                 data-target="#contact"
+                 aria-expanded="false"
+                 aria-controler="contact"
+                 >
+                 <%= fa_icon('address-book') %>
+          </button>
+            <div class="collapse" id="contact">
               <div class="card card-block">
-                <strong>Pharmacist certificate</strong>
-                <em>Dec. 2012 ~ present</em>
+                <a href="mailto:learnhu.com@gmail.com" target='_blank'><%= fa_icon "envelope-o" %></a>
+                <a href="https://github.com/A-hu" target='_blank'><%= fa_icon "github" %></a>
+                <a href="https://www.linkedin.com/in/louis-j-tseng-78745b134/" target='_blank'><%= fa_icon "linkedin" %></a>
+                <a href="https://twitter.com/louis0911317399" target='_blank'><%= fa_icon "twitter" %></a>
               </div>
             </div>
-
-            <button
-                   class="btn btn-info"
-                   type="button"
-                   data-toggle="collapse"
-                   data-target="#education"
-                   aria-expanded="false"
-                   aria-controler="education"
-                   >
-                   Education
-            </button>
-              <div class="collapse" id="education">
-                <div class="card card-block">
-                  National Chiao Tung University
-                  <strong>Master, Bioinformatics and Systems Biology</strong>
-                  <em>2011 ~ 2015</em>
-                </div>
-                <div class="card card-block">
-                  China Medical University
-                  <strong>Bachelor, School of Pharmacy</strong>
-                  <em>2006 ~ 2011</em>
-                </div>
-              </div>
-
-              <button
-                     class="btn btn-primary"
-                     type="button"
-                     data-toggle="collapse"
-                     data-target="#contact"
-                     aria-expanded="false"
-                     aria-controler="contact"
-                     >
-                     Contact
-              </button>
-                <div class="collapse" id="contact">
-                  <div class="card card-block">
-                    <a href="mailto:learnhu.com@gmail.com" target='_blank'><%= fa_icon "envelope-o" %></a>
-                    <a href="https://github.com/A-hu" target='_blank'><%= fa_icon "github" %></a>
-                    <a href="https://www.linkedin.com/in/louis-j-tseng-78745b134/" target='_blank'><%= fa_icon "linkedin" %></a>
-                    <a href="https://twitter.com/louis0911317399" target='_blank'><%= fa_icon "twitter" %></a>
-                  </div>
-                </div>
+        </div>
       </div>
     </div>
   </div>

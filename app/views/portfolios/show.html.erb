@@ -4,7 +4,11 @@
       <%= image_tag portfolio_img(@portfolio_item.main_image, 'main'), width: '100%' %>
     </div>
     <div class="col-md-5">
-      <h1><%= @portfolio_item.title %></h1>
+      <h1><%= @portfolio_item.title %>
+      <span class="pull-right like-show" id="portfolio-like-<%= @portfolio_item.id %>">
+        <%= render partial: "like", locals: {portfolio_item: @portfolio_item} %>
+      </span>
+      </h1>
       <em><%= @portfolio_item.subtitle %></em>
       <p><%= @portfolio_item.body %></p>
 
