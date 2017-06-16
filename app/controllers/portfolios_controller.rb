@@ -1,5 +1,7 @@
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
+  before_action :about
+  before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy, :like]
+  before_action :check_current_user, only: [:like]
   layout 'portfolio'
   access all: [:show, :index, :angular], user: {except: [:sort, :destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all
 
@@ -59,6 +61,16 @@ class PortfoliosController < ApplicationController
     end
   end
 
+  def like
+    like_portfolios = current_user.like_portfolios
+    like_portfolios.include?(@portfolio_item) ? like_portfolios.delete(@portfolio_item) : like_portfolios << @portfolio_item
+
+    respond_to do |format|
+      format.html { redirect_to @portfolio_item }
+      format.js
+    end
+  end
+
   private
 
   def portfolio_params
@@ -73,5 +85,9 @@ class PortfoliosController < ApplicationController
 
   def set_portfolio_item
     @portfolio_item = Portfolio.find(params[:id])
+  end
+
+  def about
+    @brief_about = User.find_by_roles( :site_admin ).brief_about
   end
 end

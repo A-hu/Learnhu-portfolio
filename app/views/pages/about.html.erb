@@ -22,11 +22,10 @@
         </div>
       </div>
 
-      <div class="col-md-8">
-        <p>With over a decade of development experience in a number of industries I realized tht teh typical product creation process between clients and developers was flawed. All too often developers rarely communicate to clients throughout the development stage, resulting in a final product that fails to reach the goal sought by the customer and end user.</p>
-        <br>
-        <p>For this reason I decied to utilize a completely different developement pattern that focueses on highly focused communication and transparent design patterns. When i take on a project not only do I work to craft the application accroding to the client's specifications. I give daily updates to ensure that the project is aligning properly with the client's goals. The end result is the right product, delivered on time, and on budget.</p>
-        <p>
+      <div class="col-md-8 about-content">
+
+        <p><%= @about %></p>
+        <div class="container">
         <button
            class="btn btn-info"
            type="button"
@@ -35,42 +34,85 @@
            aria-expanded="false"
            aria-controler="jobHistory"
            >
-           Job History
+           <%= fa_icon('history') %>
         </button>
-          <button
-           class="btn btn-info"
-           type="button"
-           data-toggle="collapse"
-           data-target="#education"
-           aria-expanded="false"
-           aria-controler="education"
-           >
-           Education
-          </button>
-        </p>
-
-        <p>
         <div class="collapse" id="jobHistory">
           <div class="card card-block">
-            Rails developer
+            Diabnext
+            <strong>System Engineer</strong>
+            <em>Dec. 2016 ~ present</em>
           </div>
           <div class="card card-block">
-            AI developer
+            Puzi Hospital
+            <strong>Hospital Pharmacist</strong>
+            <em>Sep. 2015 ~ Aug. 2016</em>
+          </div>
+          <div class="card card-block">
+            Etone Medicine Union
+            <strong>Registered Pharmacist</strong>
+            <em>Dec. 2012 ~ Jul. 2015</em>
           </div>
         </div>
 
-        <div class="collapse" id="education">
-          <div class="card card-block">
-            China Medical University
+        <button
+               class="btn btn-info"
+               type="button"
+               data-toggle="collapse"
+               data-target="#cert"
+               aria-expanded="false"
+               aria-controler="cert"
+               >
+               <%= fa_icon('certificate') %>
+        </button>
+          <div class="collapse" id="cert">
+            <div class="card card-block">
+              <strong>Pharmacist certificate</strong>
+              <em>Dec. 2012</em>
+            </div>
           </div>
-          <div class="card card-block">
-            National Chiao Tong University
+
+          <button
+                 class="btn btn-info"
+                 type="button"
+                 data-toggle="collapse"
+                 data-target="#education"
+                 aria-expanded="false"
+                 aria-controler="education"
+                 >
+                 <%= fa_icon('graduation-cap') %>
+          </button>
+          <div class="collapse" id="education">
+            <div class="card card-block">
+              National Chiao Tung University
+              <strong>Master, Bioinformatics and Systems Biology</strong>
+              <em>2011 ~ 2015</em>
+            </div>
+            <div class="card card-block">
+              China Medical University
+              <strong>Bachelor, School of Pharmacy</strong>
+              <em>2006 ~ 2011</em>
+            </div>
           </div>
-          <div class="card card-block">
-            Havard Business School
-          </div>
+
+          <button
+                 class="btn btn-primary"
+                 type="button"
+                 data-toggle="collapse"
+                 data-target="#contact"
+                 aria-expanded="false"
+                 aria-controler="contact"
+                 >
+                 <%= fa_icon('drivers-license') %>
+          </button>
+            <div class="collapse" id="contact">
+              <div class="card card-block">
+                <a href="mailto:learnhu.com@gmail.com" target='_blank'><%= fa_icon "envelope-o" %></a>
+                <a href="https://github.com/A-hu" target='_blank'><%= fa_icon "github" %></a>
+                <a href="https://www.linkedin.com/in/louis-j-tseng-78745b134/" target='_blank'><%= fa_icon "linkedin" %></a>
+                <a href="https://twitter.com/louis0911317399" target='_blank'><%= fa_icon "twitter" %></a>
+              </div>
+            </div>
         </div>
-        </p>
       </div>
     </div>
   </div>

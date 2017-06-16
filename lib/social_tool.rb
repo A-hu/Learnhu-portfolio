@@ -1,5 +1,5 @@
 module SocialTool
-  def self.twitter_search
+  def self.twitter_search field, type
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV.fetch("TWITTER_CONSUMER_KEY")
       config.consumer_secret     = ENV.fetch("TWITTER_CONSUMER_SECRET")
@@ -7,7 +7,7 @@ module SocialTool
       config.access_token_secret = ENV.fetch("TWITTER_ACCESS_SECRET")
     end
 
-  client.search("aws", result_type: 'popular').take(6).collect do |tweet|
+  client.search(field, result_type: type).take(6).collect do |tweet|
     "#{tweet.user.screen_name}: #{tweet.text}"
   end
   end

@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem 'byebug', '~> 9.0', '>= 9.0.6'
   gem 'pry-byebug'
 end
 
@@ -70,6 +70,7 @@ gem 'twitter', '~> 6.1'
 gem 'redis', '~> 3.3', '>= 3.3.3'
 gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.1'
+gem 'omniauth-facebook'
 
 ruby '2.4.0'
 

@@ -4,4 +4,5 @@
 
 <%= render @topics %>
 
+<%= link_to "Create Topic", new_topic_path, class: 'btn btn-primary' if logged_in? :site_admin %>
 </div>

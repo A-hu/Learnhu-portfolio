@@ -1,5 +1,7 @@
 @import "bootstrap";
+@import "font-awesome";
 @import "gritter";
+@import "toggle_nav";
 
 /*
  * Globals
@@ -14,6 +16,7 @@ a:hover {
 
 .masthead-brand a {
   color: #fff;
+  color: rgba(255,255,255,.8);
 }
 
 /* Custom default button */
@@ -82,7 +85,9 @@ h6, .h6 {
  */
 
 .masthead {
+  color: white;
   margin-bottom: 2rem;
+  z-index: 1;
 }
 
 .masthead-brand {
@@ -140,6 +145,7 @@ h6, .h6 {
 
 .mastfoot {
   color: rgba(255,255,255,.5);
+  z-index: -1;
 }
 
 
@@ -187,7 +193,16 @@ h6, .h6 {
 
 .card-block {
   color: black;
-  text-align: left;
+  margin: 5px auto;
+}
+
+.card-block strong {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.card-block em {
+  text-align: right;
 }
 
 .auth-links a {
@@ -226,22 +241,7 @@ h6, .h6 {
   z-index: -100;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  background: image-url('home.jpg') no-repeat;
-  background-size: cover;
-}
-
-#background {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  background: image-url('home.jpg') no-repeat;
+  background: image-url('desktop.jpg') no-repeat;
   background-size: cover;
 }
 
@@ -268,7 +268,11 @@ h6, .h6 {
 }
 
 .app-card-container a {
-  color: pink;
+  color: #0275D8;
+}
+
+.app-card-container a:hover {
+  color: #014C8C;
 }
 
 .app-card-container > .card {
@@ -285,10 +289,39 @@ h6, .h6 {
   text-align: center;
 }
 
-.card-block {
-  margin: 5px auto;
-}
-
 .skill {
   margin: 10px auto;
+}
+
+.dropbtn img {
+  margin-left: 50%;
+}
+
+.about-content button {
+  margin: 1em;
+}
+
+#contact a {
+  text-align: center;
+  font-size: 5em;
+}
+
+.btn i {
+  font-size: 2.5em;
+}
+
+.container button {
+  margin: 5%;
+}
+
+.fb-btn {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+  font-size: 1em;
+  color: white;
+  background-color: #4862A3;
+  border-radius: 4px;
+  margin-bottom: 1em;
 }

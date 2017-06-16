@@ -1,6 +1,16 @@
 module BlogsHelper
-  def gravatar_helper user
-    image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", width: 60
+  def avatar_helper user, width, type
+    fb_regex = %r{(?:https?:\/\/)?(?:www\.)?facebook\.com\/(?:(?:\w\.)*#!\/)?(?:pages\/)?(?:[\w\-\.]*\/)*([\w\-\.]*)}
+
+    if user.image.present? && user.image.match(fb_regex)
+        image_tag user.image, size: width, class: type
+    else
+      gravatar_helper user, width, type
+    end
+  end
+
+  def gravatar_helper user, width, type = ''
+    image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", width: width, class: type
   end
 
   class CodeRayify < Redcarpet::Render::HTML
@@ -25,6 +35,14 @@ module BlogsHelper
   end
 
   def blog_status_color blog
-    'color: red;' if blog.draft?
+    if blog.draft?
+      'color: red;'
+    elsif blog.sticky?
+      'color: gold;'
+    end
+  end
+
+  def sticky_helper blog
+    fa_icon "bookmark" if blog.sticky?
   end
 end

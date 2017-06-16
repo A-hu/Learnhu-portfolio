@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "gritter";
+@import "toggle_nav";
 
 /*
  * Globals
@@ -55,6 +56,7 @@ h6, .h6 {
   padding: 1rem;
   font-weight: 500;
   color: #cdddeb;
+  text-align: center;
 }
 .nav-link:hover,
 .nav-link:focus {
@@ -186,6 +188,7 @@ h6, .h6 {
   float: right;
   font-size: .7em;
   font-style: italic;
+  margin-top: 2em;
 }
 
 .comment-name {
@@ -193,7 +196,6 @@ h6, .h6 {
 }
 
 .topic-style {
-  float: left;
 }
 
 .blog-crumb a {
@@ -207,4 +209,30 @@ h6, .h6 {
 
 .blog-sidebar-source {
   margin-top: 20px;
+}
+
+.blog-main img {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.btn-place {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+}
+
+.fa-bookmark {
+  color: gold;
+  margin-right: .3em;
+}
+
+.edit-menu i {
+  font-size: 2em;
+  color: #0275D8;
+}
+
+.like-index {
+  color: #0275D8;
 }
