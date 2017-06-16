@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register', edit: 'profile' }
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register', edit: 'profile' }
+
   resources :portfolios, except: [:show] do
     put :sort, on: :collection
     post :like, on: :member

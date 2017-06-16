@@ -1,4 +1,14 @@
 module BlogsHelper
+  def avatar_helper user, width, type
+    fb_regex = %r{(?:https?:\/\/)?(?:www\.)?facebook\.com\/(?:(?:\w\.)*#!\/)?(?:pages\/)?(?:[\w\-\.]*\/)*([\w\-\.]*)}
+
+    if user.image.present? && user.image.match(fb_regex)
+        image_tag user.image, size: width, class: type
+    else
+      gravatar_helper user, width, type
+    end
+  end
+
   def gravatar_helper user, width, type = ''
     image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", width: width, class: type
   end

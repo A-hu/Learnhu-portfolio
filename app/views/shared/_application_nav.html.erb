@@ -4,7 +4,7 @@
     <nav class="nav nav-masthead app-nav">
       <%= nav_helper 'nav-link', 'span' %>
       <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn"><%= gravatar_helper current_user, 60, "img-circular" %></button>
+        <button onclick="myFunction()" class="dropbtn"><%= avatar_helper current_user, 60, "img-circular" %></button>
         <div id="myDropdown" class="dropdown-content">
           <%= login_helper %>
         </div>

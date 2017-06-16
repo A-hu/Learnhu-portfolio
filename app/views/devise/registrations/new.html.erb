@@ -26,7 +26,9 @@
               <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'password confirmation' %>
             </div>
           </div>
-
+          <div class="col-md-12">
+            <%= link_to fa_icon('facebook') + "acebook Login", user_facebook_omniauth_authorize_path, class: 'btn fb-btn' %>
+          </div>
           <div class="col-md-8"></div>
           <div class="col-md-4">
             <div class="form-group">
