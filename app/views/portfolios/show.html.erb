@@ -4,25 +4,31 @@
       <%= image_tag portfolio_img(@portfolio_item.main_image, 'main'), width: '100%' %>
     </div>
     <div class="col-md-5">
-      <h1><%= @portfolio_item.title %>
-      <span class="pull-right like-show" id="portfolio-like-<%= @portfolio_item.id %>">
-        <%= render partial: "like", locals: {portfolio_item: @portfolio_item} %>
-      </span>
-      </h1>
-      <em><%= @portfolio_item.subtitle %></em>
-      <p><%= @portfolio_item.body %></p>
+      <div class="row">
+        <div class="col-md-10">
+          <h1><%= @portfolio_item.title %>
+      </div>
+      <div class="col-md-2">
+        <h1 class="like-show" id="portfolio-like-<%= @portfolio_item.id %>">
+          <%= render partial: "like", locals: {portfolio_item: @portfolio_item} %>
+        </h1>
+      </div>
+      </div>
+          </h1>
+          <em><%= @portfolio_item.subtitle %></em>
+          <p><%= @portfolio_item.body %></p>
 
-      <h2>Technologies Used:</h2>
+          <h2>Technologies Used:</h2>
 
-      <% @portfolio_item.technologies.each do |t| %>
-        <p><%= t.name %></p>
-      <% end %>
+          <% @portfolio_item.technologies.each do |t| %>
+            <p><%= t.name %></p>
+          <% end %>
 
-      <% if logged_in?(:site_admin) %>
-        <div class="">
-          <%= link_to "Edit Item", edit_portfolio_path(@portfolio_item), class: 'btn btn-warning' %>
-        </div>
-      <% end %>
+          <% if logged_in?(:site_admin) %>
+            <div class="">
+              <%= link_to "Edit Item", edit_portfolio_path(@portfolio_item), class: 'btn btn-warning' %>
+            </div>
+          <% end %>
     </div>
   </div>
 </div>

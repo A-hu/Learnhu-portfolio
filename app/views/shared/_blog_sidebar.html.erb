@@ -7,9 +7,11 @@
   <%= source_helper("alert alert-info blog-sidebar-source") %>
 
   <div class="sidebar-module">
-    <h4>Topics</h4>
+    <h4>New publish</h4>
     <% @side_bar_topics.each do |topic| %>
-      <p><%= link_to topic.title, topic %></p>
+      <ul><%= link_to fa_icon('book') + topic.title, topic %>
+      <li><%= link_to "[New]" + topic.blogs.last.title, topic.blogs.last %></li>
+    </ul>
     <% end %>
   </div>
 
