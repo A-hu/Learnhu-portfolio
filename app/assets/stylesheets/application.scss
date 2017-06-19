@@ -3,6 +3,26 @@
 @import "gritter";
 @import "toggle_nav";
 
+@font-face {
+  font-family: 'Lato';
+  src:font-url('Lato-Regular.ttf')
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src:font-url('RobotoSlab-Regular.ttf')
+}
+
+@font-face {
+  font-family: 'cwTeXKai';
+  src:font-url('cwTeXHei-zhonly.ttf')
+}
+
+@font-face {
+  font-family: 'GenShinGothic';
+  src:font-url('GenShinGothic-P-Normal.ttf')
+}
+
 /*
  * Globals
  */
@@ -42,7 +62,7 @@ body {
   color: #fff;
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', 'cwTeXKai', sans-serif;
 }
 
 h1, .h1,
@@ -51,7 +71,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Roboto Slab', 'GenShinGothic', serif;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */

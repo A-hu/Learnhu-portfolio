@@ -14,9 +14,19 @@
   src:font-url('RobotoSlab-Regular.ttf')
 }
 
+@font-face {
+  font-family: 'cwTeXKai';
+  src:font-url('cwTeXHei-zhonly.ttf')
+}
+
+@font-face {
+  font-family: 'GenShinGothic';
+  src:font-url('GenShinGothic-P-Normal.ttf')
+}
+
 body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', 'cwTeXKai', sans-serif;
 }
 
 h1, .h1,
@@ -25,7 +35,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Roboto Slab', 'GenShinGothic', serif;
 }
 
 
