@@ -9,9 +9,10 @@
   <div class="sidebar-module">
     <h4>New publish</h4>
     <% @side_bar_topics.each do |topic| %>
-      <ul><%= link_to fa_icon('book') + topic.title, topic %>
-      <li><%= link_to "[New]" + topic.blogs.last.title, topic.blogs.last %></li>
-    </ul>
+      <%= subscribed_helper current_user, topic %>
+      <ul>
+        <li><%= link_to "[New]" + topic.blogs.last.title, topic.blogs.last %></li>
+      </ul>
     <% end %>
   </div>
 

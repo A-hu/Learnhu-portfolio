@@ -18,8 +18,8 @@ module ApplicationHelper
     end
   end
 
-  def copyright name, msg
-    "&copy: #{Time.now.year} | <b>#{name}</b> All rights reserved".html_safe
+  def copyright name, time
+    "&copy: #{time} | <b>#{name}</b> All rights reserved".html_safe
   end
 
   def nav_items
