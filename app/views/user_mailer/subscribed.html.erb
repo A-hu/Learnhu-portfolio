@@ -1,0 +1,10 @@
+<h1>Hi, <%= @user.name %></h1>
+
+<p>
+  <% @weekly_topics.each do |topic| %>
+    <% if topic.like_users.include?(@user) %>
+      <%= topic.title %>
+      <%= topic.blogs.inspect %>
+    <% end %>
+  <% end %>
+</p>

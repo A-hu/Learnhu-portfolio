@@ -13,9 +13,9 @@ class TopicsController < ApplicationController
     @topic = Topic.find params[:id]
 
     if logged_in? :site_admin
-      @topic_blogs = @topic.blogs.recent.page(params[:page]).per(5)
+      @blogs = @topic.blogs.prior.recent.page(params[:page]).per(5)
     else
-      @topic_blogs = @topic.blogs.published.recent.page(params[:page]).per(5)
+      @blogs = @topic.blogs.prior.not_draft.recent.page(params[:page]).per(5)
     end
   end
 

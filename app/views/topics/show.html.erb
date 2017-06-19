@@ -7,13 +7,13 @@
     <%= @topic.title %>
   </h1>
   <div class="topic-body">
-    <h5><%= markdown @topic.body %></h5>
+    <h5><%= @topic.body %></h5>
   </div>
 
-  <%= paginate @topic_blogs %>
+  <%= paginate @blogs %>
 
-  <%= render @topic_blogs %>
+  <%= render @blogs %>
 
-  <%= paginate @topic_blogs %>
+  <%= paginate @blogs %>
 
 </div>
