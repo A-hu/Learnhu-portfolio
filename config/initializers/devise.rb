@@ -276,7 +276,3 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   config.omniauth :facebook, ENV["FB_APP_ID"], ENV["FB_APP_SECRET"]
 end
-
-Devise::Mailer.class_eval do
-  helper :application
-end
