@@ -6,7 +6,7 @@ class TopicsController < ApplicationController
   layout 'blog'
 
   def index
-    @topics = Topic.all
+    @topics = Topic.all.order(updated_at: :desc)
   end
 
   def show
@@ -68,7 +68,7 @@ class TopicsController < ApplicationController
   private
 
   def topic_params
-    params.require(:topic).permit(:title)
+    params.require(:topic).permit(:title, :body)
   end
 
   def find_topic

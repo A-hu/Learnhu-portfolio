@@ -6,6 +6,9 @@
     </span>
     <%= @topic.title %>
   </h1>
+  <div class="topic-body">
+    <h5><%= markdown @topic.body %></h5>
+  </div>
 
   <%= paginate @topic_blogs %>
 

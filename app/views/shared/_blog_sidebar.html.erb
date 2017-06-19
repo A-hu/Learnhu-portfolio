@@ -1,17 +1,19 @@
 <div class="col-sm-3 offset-sm-1 blog-sidebar">
   <div class="sidebar-module sidebar-module-inset">
     <h4>About</h4>
-    <p><%= @brief_about %></p>
+    <h6><%= @brief_about %></h6>
   </div>
 
   <%= source_helper("alert alert-info blog-sidebar-source") %>
 
   <div class="sidebar-module">
-    <h4>New publish</h4>
+    <h4>New Arrivals</h4>
     <% @side_bar_topics.each do |topic| %>
       <%= subscribed_helper current_user, topic %>
       <ul>
-        <li><%= link_to "[New]" + topic.blogs.last.title, topic.blogs.last %></li>
+        <li><%= link_to "[New]" + topic.blogs.last.title, topic.blogs.last %>
+        <p>Published: <%= distance_of_time_in_words(topic.blogs.last.created_at, Time.now) %></p>
+        </li>
       </ul>
     <% end %>
   </div>
