@@ -7,7 +7,7 @@ class Topic < ApplicationRecord
   has_many :like_users, source: :user, through: :like_joins, as: :topics
 
   def self.with_blogs
-    includes(:blogs).where.not(blogs: { id: nil }).where.not(blogs: { status: 0 })
+    includes(:blogs).where.not(blogs: { id: nil }).where.not(blogs: { status: 0 }).order(updated_at: :desc)
   end
 
   def self.with_weekly_blogs
