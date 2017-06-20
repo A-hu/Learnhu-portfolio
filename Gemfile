@@ -40,6 +40,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', '~> 9.0', '>= 9.0.6'
   gem 'pry-byebug'
+  gem 'sqlite3'
+  gem 'mailcatcher'
 end
 
 group :development do
@@ -71,7 +73,6 @@ gem 'redis', '~> 3.3', '>= 3.3.3'
 gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.1'
 gem 'omniauth-facebook'
-gem 'mailcatcher'
 
 # cron jobs
 # Heroku using https://devcenter.heroku.com/articles/scheduler
