@@ -58,14 +58,14 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "learnhu.com" }
+  config.action_mailer.default_url_options = { host: "www.learnhu.com" }
   config.action_mailer.smtp_settings = {
     authentication: :plain,
     port: 587,
     address: "smtp.mailgun.org",
-    domain: ENV["MAILGUN_DOMAIN"],
-    user_name: ENV["MAILGUN_USERNAME"],
-    password: ENV["MAILGUN_PASSWORD"],
+    domain: "learnhu.com",
+    user_name: ENV["MAILGUN_SMTP_LOGIN"],
+    password: ENV["MAILGUN_SMTP_PASSWORD"],
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
