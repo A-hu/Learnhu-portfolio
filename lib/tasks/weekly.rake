@@ -1,9 +1,15 @@
 namespace :weekly do
 
   task subscription: :environment do
-    User.find_each do |user|
-      weekly_topics = Topic.with_weekly_blogs
-      UserMailer.subscribed(weekly_topics, user).deliver_now!
+    if Time.now.wday == 0
+      User.find_each do |user|
+        weekly_topics = Topic.with_weekly_blogs.to_a
+        UserMailer.subscribed(weekly_topics, user).deliver_later! if like_topics_renew user
+      end
     end
+  end
+
+  def like_topics_renew user
+    user.like_topics.includes(:blogs).where(blogs: {created_at: (Time.now - 7.day)..Time.now}).where.not(blogs: {status: 0}).present?
   end
 end
