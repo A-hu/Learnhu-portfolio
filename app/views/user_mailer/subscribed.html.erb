@@ -1,10 +1,15 @@
-<h1>Hi, <%= @user.name %></h1>
-
-<p>
+<div class="content-container container">
   <% @weekly_topics.each do |topic| %>
-    <% if topic.like_users.include?(@user) %>
-      <%= topic.title %>
-      <%= topic.blogs.inspect %>
-    <% end %>
+  <div class="content-topic">
+    <h2><%= topic.title %></h2>
+        <% topic.blogs.each do |blog| %>
+          <div class="content-blog container">
+            <h2><%= link_to blog.title, blog_url(blog, from: 'Email') %></h2>
+            <p><%= truncate blog.body, length: 160 %></p>
+            <h3><%= link_to 'read more...', blog_url(blog, from: 'Email') %></h3>
+          </div>
+        <% end %>
+  </div>
   <% end %>
-</p>
+</div>
+<br>
