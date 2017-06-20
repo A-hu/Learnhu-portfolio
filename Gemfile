@@ -71,6 +71,11 @@ gem 'redis', '~> 3.3', '>= 3.3.3'
 gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.1'
 gem 'omniauth-facebook'
+gem 'mailcatcher'
+
+# cron jobs
+# Heroku using https://devcenter.heroku.com/articles/scheduler
+# gem 'whenever', '~> 0.9.4'
 
 ruby '2.4.0'
 

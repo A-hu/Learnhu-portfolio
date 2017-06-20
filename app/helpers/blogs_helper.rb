@@ -13,6 +13,14 @@ module BlogsHelper
     image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", width: width, class: type
   end
 
+  def subscribed_helper user, target
+    if user.like_topics.include?(target)
+      link_to fa_icon('rss', text: "#{target.title}", style: 'opacity: 1'), target
+    else
+      link_to fa_icon('rss', text: "#{target.title}", style: 'opacity: 0.3'), target
+    end
+  end
+
   class CodeRayify < Redcarpet::Render::HTML
     def block_code(code, language)
       CodeRay.scan(code, language).div

@@ -6,16 +6,16 @@ class TopicsController < ApplicationController
   layout 'blog'
 
   def index
-    @topics = Topic.all
+    @topics = Topic.all.order(updated_at: :desc)
   end
 
   def show
     @topic = Topic.find params[:id]
 
     if logged_in? :site_admin
-      @topic_blogs = @topic.blogs.recent.page(params[:page]).per(5)
+      @blogs = @topic.blogs.prior.recent.page(params[:page]).per(5)
     else
-      @topic_blogs = @topic.blogs.published.recent.page(params[:page]).per(5)
+      @blogs = @topic.blogs.prior.not_draft.recent.page(params[:page]).per(5)
     end
   end
 
@@ -68,7 +68,7 @@ class TopicsController < ApplicationController
   private
 
   def topic_params
-    params.require(:topic).permit(:title)
+    params.require(:topic).permit(:title, :body)
   end
 
   def find_topic

@@ -1,15 +1,19 @@
 <div class="col-sm-8 blog-main">
 
-  <h1><span id='topic-like'>
-      <%= link_to fa_icon('rss'), like_topic_path(@topic), method: :post, remote: true %>
+  <h1>
+    <span id='topic-like'>
+      <%= render "like" %>
     </span>
     <%= @topic.title %>
   </h1>
+  <div class="topic-body">
+    <h5><%= @topic.body %></h5>
+  </div>
 
-  <%= paginate @topic_blogs %>
+  <%= paginate @blogs %>
 
-  <%= render @topic_blogs %>
+  <%= render @blogs %>
 
-  <%= paginate @topic_blogs %>
+  <%= paginate @blogs %>
 
 </div>
