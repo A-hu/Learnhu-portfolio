@@ -5,6 +5,10 @@
       <%= render "like" %>
     </span>
     <%= @topic.title %>
+    <% if logged_in? :site_admin %>
+      <%= link_to fa_icon('pencil-square-o'), edit_topic_path(@topic) %>
+      <%= link_to fa_icon('trash'), @topic, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   </h1>
   <div class="topic-body">
     <h5><%= @topic.body %></h5>

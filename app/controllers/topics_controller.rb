@@ -5,8 +5,9 @@ class TopicsController < ApplicationController
   before_action :check_current_user, only: [:like]
   layout 'blog'
 
+  access all: [:show], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
   def index
-    @topics = Topic.all.order(updated_at: :desc)
+    @topics = Topic.order(:title)
   end
 
   def show

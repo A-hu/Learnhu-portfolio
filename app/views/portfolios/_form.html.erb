@@ -52,5 +52,9 @@
     <div class="form-group">
       <%= f.submit 'Submit', class: 'btn btn-primary btn-block' %>
     </div>
+
+    <div class="form-group">
+      <%= link_to 'Delete this portfolio', @portfolio_item, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-block' %>
+    </div>
   </div>
 <% end %>

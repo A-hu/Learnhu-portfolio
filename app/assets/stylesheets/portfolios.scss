@@ -24,7 +24,12 @@
   src:font-url('GenShinGothic-P-Normal.ttf')
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
+  line-height: 2em;
   min-height: 75rem; /* Can be removed; just added for demo purposes */
   font-family: 'Lato', 'cwTeXKai', sans-serif;
 }
@@ -35,6 +40,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
+  line-height: 2em;
   font-family: 'Roboto Slab', 'GenShinGothic', serif;
 }
 
