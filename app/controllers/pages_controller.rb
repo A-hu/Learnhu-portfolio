@@ -14,9 +14,6 @@ class PagesController < ApplicationController
   end
 
   def tech_news
-    @aws_tweets = SocialTool.twitter_search "#aws", "popular"
-    @rails_tweets = SocialTool.twitter_search "rubyonrails", "recent"
-    @iot_tweets = SocialTool.twitter_search "#IoT", "popular"
-    @ai_tweets = SocialTool.twitter_search "#ArtificialIntelligence", "popular"
+    @watches = User.find_by_roles(:site_admin).watches
   end
 end

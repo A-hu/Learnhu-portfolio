@@ -17,6 +17,7 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :skills, dependent: :destroy
+  has_many :watches, dependent: :destroy
 
   has_many :like_joins
   has_many :like_blogs, through: :like_joins, source: :likable, source_type: 'Blog'
@@ -31,6 +32,7 @@ class User < ApplicationRecord
   has_many :like_comments, through: :like_joins, source: :likable, source_type: 'Comment'
 
   accepts_nested_attributes_for :skills, allow_destroy: true, reject_if: lambda { |attrs| attrs['title'].blank? }
+  accepts_nested_attributes_for :watches, allow_destroy: true, reject_if: lambda { |attrs| attrs['title'].blank? }
 
   def first_name
     self.name.split.first

@@ -30,11 +30,6 @@
             <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'New password confirmation' %>
           </div>
 
-          <div class="form-group">
-            <%= f.label :current_password %>
-            <%= f.password_field :current_password, autocomplete: "off", class: 'form-control', placeholder: 'Keyin current password to confirm your changes' %>
-          </div>
-
           <% if logged_in? :site_admin %>
             <div class="form-group">
               <%= f.label :brief_introduction %>
@@ -45,7 +40,7 @@
               <%= f.label :introduction %>
               <%= f.text_area :about, class: 'form-control', rows: 15, placeholder: '(50 ~ 300 words)' %>
             </div>
-
+<hr>
             <h2>Skills</h2>
             <div class="form-group">
               <%= f.fields_for :skills do |skill_form| %>
@@ -56,10 +51,26 @@
                 <%= link_to_add_association 'Add Skill', f, :skills, class: 'btn btn-info' %>
               </div>
             </div>
+<hr>
+            <h2>Watches</h2>
+            <div class="form-group">
+              <%= f.fields_for :watches do |watch_form| %>
+                <%= render 'watch_fields', f: watch_form %>
+              <% end %>
+
+              <div>
+                <%= link_to_add_association 'Add Watch', f, :watches, class: 'btn btn-info' %>
+              </div>
+            </div>
           <% end %>
 
           <div class="form-group">
-            <%= f.submit "Update", class: 'btn btn-primary' %>
+            <%= f.label :current_password %>
+            <%= f.password_field :current_password, autocomplete: "off", class: 'form-control', placeholder: 'Keyin current password to confirm your changes' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "Update", class: 'btn btn-primary btn-block' %>
           </div>
         <% end %>
       </div>

@@ -1,0 +1,16 @@
+<h1 class="cover-heading"><%= watch.title %> News</h1>
+<div class="row">
+  <% twitter_helper(watch.title, watch.amount, watch.status).each do |tweet| %>
+    <div class="col-md-6">
+      <div class="tech-news">
+        <div class="card">
+          <%= twitter_parser tweet %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
+<br>
+<br>

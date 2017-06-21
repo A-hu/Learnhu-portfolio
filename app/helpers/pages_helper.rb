@@ -1,4 +1,8 @@
 module PagesHelper
+  def twitter_helper field, amount, status
+    SocialTool.twitter_search field, amount, status
+  end
+
   def twitter_parser tweet
     url_regex = %r{
         \b

@@ -1,71 +1,10 @@
 <div class="inner cover">
-  <h1>Hi, <%= current_user.first_name if current_user %></h1>
+  <h1>Hi, <%= current_user.first_name %></h1>
   <p>News from Twitter</p>
 
   <br>
 
-  <h1 class="cover-heading">IoT News</h1>
-  <div class="row">
-    <% @iot_tweets.each do |tweet| %>
-      <div class="col-md-6">
-        <div class="tech-news">
-          <div class="card">
-            <%= twitter_parser tweet %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
-  <br>
-  <br>
-  <br>
-
-  <h1 class="cover-heading">AI News</h1>
-  <div class="row">
-    <% @ai_tweets.each do |tweet| %>
-      <div class="col-md-6">
-        <div class="tech-news">
-          <div class="card">
-            <%= twitter_parser tweet %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
-  <br>
-  <br>
-  <br>
-
-  <h1 class="cover-heading">Rails News</h1>
-  <div class="row">
-    <% @rails_tweets.each do |tweet| %>
-      <div class="col-md-6">
-        <div class="tech-news">
-          <div class="card">
-            <%= twitter_parser tweet %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
-  <br>
-  <br>
-  <br>
-
-  <h1 class="cover-heading">AWS News</h1>
-  <div class="row">
-    <% @aws_tweets.each do |tweet| %>
-      <div class="col-md-6">
-        <div class="tech-news">
-          <div class="card">
-            <%= twitter_parser tweet %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <% @watches.each do |watch| %>
+    <%= render partial: "pages/tweet", locals: { watch: watch } %>
+  <% end %>
 </div>
-

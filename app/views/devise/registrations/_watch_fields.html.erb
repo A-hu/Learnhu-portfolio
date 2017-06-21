@@ -1,0 +1,6 @@
+<div class="form-group nested-fields">
+  <%= f.text_field :title, class: 'form-control', placeholder: 'title' %>
+  <%= f.number_field :amount, in: 2..10, class: 'form-control', placeholder: '2 to 10' %>
+  <%= f.select :status, Watch.statuses.keys, {}, class: 'form-control'  %>
+  <%= link_to_remove_association 'Remove Watch', f, class: 'btn btn-warning' %>
+</div>
