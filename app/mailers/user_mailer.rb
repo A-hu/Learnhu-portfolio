@@ -9,6 +9,6 @@ class UserMailer < ApplicationMailer
     @weekly_topics = weekly_topics
     @user = user
 
-    mail(to: user.email, subject: "New Learnhu Posts of This Week")
+    mail(to: user.email, subject: "Learnhu Weekly News")
   end
 end

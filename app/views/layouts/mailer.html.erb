@@ -244,10 +244,14 @@ table[class=body] .container {
       }
 
       .content-topic > h2 {
-        color: white;
         text-align: center;
         background-color: #0190D4 !important;
         border-radius: .3em .3em 0 0;
+      }
+
+      .content-topic > h2 a {
+        text-decoration: none;
+        color: white;
       }
 
       .content-container {
@@ -287,7 +291,7 @@ table[class=body] .container {
                     <tr>
                       <td>
                         <h1>Hi, <%= @user.name %></h1>
-                        <h3>Have a good journey from these new posts.</h3>
+                        <h3>Have a good journey from Learnhu News.</h3>
 
                         <%= yield %>
 
