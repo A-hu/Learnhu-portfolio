@@ -73,6 +73,7 @@ gem 'redis', '~> 3.3', '>= 3.3.3'
 gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.1'
 gem 'omniauth-facebook'
+gem 'delayed_job_active_record'
 
 # cron jobs
 # Heroku using https://devcenter.heroku.com/articles/scheduler

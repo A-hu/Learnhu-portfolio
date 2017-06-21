@@ -23,4 +23,8 @@ class Blog < ApplicationRecord
   def self.prior
     order('status DESC')
   end
+
+  def self.weekly_news
+    where(created_at: (Time.now - 7.days)..Time.now).recent.not_draft
+  end
 end

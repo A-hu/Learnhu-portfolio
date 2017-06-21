@@ -4,7 +4,7 @@ namespace :weekly do
     if Time.now.wday == 0
       User.find_each do |user|
         weekly_topics = Topic.with_weekly_blogs.to_a
-        UserMailer.subscribed(weekly_topics, user).deliver_later! if like_topics_renew user
+        UserMailer.delay.subscribed(weekly_topics, user) if like_topics_renew user
       end
     end
   end

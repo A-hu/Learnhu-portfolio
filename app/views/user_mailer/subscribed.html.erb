@@ -1,12 +1,13 @@
 <div class="content-container container">
   <% @weekly_topics.each do |topic| %>
   <div class="content-topic">
-    <h2><%= topic.title %></h2>
-        <% topic.blogs.each do |blog| %>
+    <h2><%= link_to topic.title, topic_url(topic, from: 'Email') %></h2>
+        <% topic.blogs.weekly_news.each do |blog| %>
           <div class="content-blog container">
             <h2><%= link_to blog.title, blog_url(blog, from: 'Email') %></h2>
             <p><%= truncate blog.body, length: 160 %></p>
             <h3><%= link_to 'read more...', blog_url(blog, from: 'Email') %></h3>
+            <p>Published: <%= distance_of_time_in_words(blog.created_at, Time.now) %></p>
           </div>
         <% end %>
   </div>
