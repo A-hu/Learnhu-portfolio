@@ -3,8 +3,8 @@ class Topic < ApplicationRecord
   validates_uniqueness_of  :title
   has_many :blogs
 
-  has_many :like_joins, as: :likable
-  has_many :like_users, source: :user, through: :like_joins, as: :topics
+  has_many :like_joins, as: :likable, dependent: :destroy
+  has_many :like_users, source: :user, through: :like_joins, as: :topics, dependent: :destroy
 
   def self.with_blogs
     includes(:blogs).where.not(blogs: { id: nil }).where.not(blogs: { status: 0 }).order(updated_at: :desc)

@@ -26,52 +26,58 @@
 
         <p><%= @about %></p>
         <div class="container">
-        <button
-           class="btn btn-info"
-           type="button"
-           data-toggle="collapse"
-           data-target="#jobHistory"
-           aria-expanded="false"
-           aria-controler="jobHistory"
-           >
-           <%= fa_icon('history') %>
-        </button>
-        <div class="collapse" id="jobHistory">
-          <div class="card card-block">
-            Diabnext
-            <strong>System Engineer</strong>
-            <em>Dec. 2016 ~ present</em>
-          </div>
-          <div class="card card-block">
-            Puzi Hospital
-            <strong>Hospital Pharmacist</strong>
-            <em>Sep. 2015 ~ Aug. 2016</em>
-          </div>
-          <div class="card card-block">
-            Etone Medicine Union
-            <strong>Registered Pharmacist</strong>
-            <em>Dec. 2012 ~ Jul. 2015</em>
-          </div>
-        </div>
-
-        <button
-               class="btn btn-info"
-               type="button"
-               data-toggle="collapse"
-               data-target="#cert"
-               aria-expanded="false"
-               aria-controler="cert"
-               >
-               <%= fa_icon('certificate') %>
-        </button>
-          <div class="collapse" id="cert">
-            <div class="card card-block">
-              <strong>Pharmacist certificate</strong>
-              <em>Dec. 2012</em>
+          <div class="row">
+            <div class="col-md-3">
+              <button
+                 class="btn btn-info"
+                 type="button"
+                 data-toggle="collapse"
+                 data-target="#jobHistory"
+                 aria-expanded="false"
+                 aria-controler="jobHistory"
+                 >
+                 <%= fa_icon('history') %>
+              </button>
+              <div class="collapse" id="jobHistory">
+                <div class="card card-block">
+                  Diabnext
+                  <strong>System Engineer</strong>
+                  <em>Dec. 2016 ~ present</em>
+                </div>
+                <div class="card card-block">
+                  Puzi Hospital
+                  <strong>Hospital Pharmacist</strong>
+                  <em>Sep. 2015 ~ Aug. 2016</em>
+                </div>
+                <div class="card card-block">
+                  Etone Medicine Union
+                  <strong>Registered Pharmacist</strong>
+                  <em>Dec. 2012 ~ Jul. 2015</em>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <button
+            <div class="col-md-3">
+              <button
+                 class="btn btn-info"
+                 type="button"
+                 data-toggle="collapse"
+                 data-target="#cert"
+                 aria-expanded="false"
+                 aria-controler="cert"
+                 >
+                 <%= fa_icon('certificate') %>
+              </button>
+              <div class="collapse" id="cert">
+                <div class="card card-block">
+                  <strong>Pharmacist certificate</strong>
+                  <em>Dec. 2012</em>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <button
                  class="btn btn-info"
                  type="button"
                  data-toggle="collapse"
@@ -80,21 +86,23 @@
                  aria-controler="education"
                  >
                  <%= fa_icon('graduation-cap') %>
-          </button>
-          <div class="collapse" id="education">
-            <div class="card card-block">
-              National Chiao Tung University
-              <strong>Master, Bioinformatics and Systems Biology</strong>
-              <em>2011 ~ 2015</em>
+              </button>
+              <div class="collapse" id="education">
+                <div class="card card-block">
+                  National Chiao Tung University
+                  <strong>Master, Bioinformatics and Systems Biology</strong>
+                  <em>2011 ~ 2015</em>
+                </div>
+                <div class="card card-block">
+                  China Medical University
+                  <strong>Bachelor, School of Pharmacy</strong>
+                  <em>2006 ~ 2011</em>
+                </div>
+              </div>
             </div>
-            <div class="card card-block">
-              China Medical University
-              <strong>Bachelor, School of Pharmacy</strong>
-              <em>2006 ~ 2011</em>
-            </div>
-          </div>
 
-          <button
+            <div class="col-md-3">
+              <button
                  class="btn btn-primary"
                  type="button"
                  data-toggle="collapse"
@@ -103,15 +111,18 @@
                  aria-controler="contact"
                  >
                  <%= fa_icon('drivers-license') %>
-          </button>
-            <div class="collapse" id="contact">
-              <div class="card card-block">
-                <a href="mailto:learnhu.com@gmail.com" target='_blank'><%= fa_icon "envelope-o" %></a>
-                <a href="https://github.com/A-hu" target='_blank'><%= fa_icon "github" %></a>
-                <a href="https://www.linkedin.com/in/louis-j-tseng-78745b134/" target='_blank'><%= fa_icon "linkedin" %></a>
-                <a href="https://twitter.com/learnhu1" target='_blank'><%= fa_icon "twitter" %></a>
+              </button>
+              <div class="collapse" id="contact">
+                <div class="card card-block">
+                  <a href="mailto:learnhu.com@gmail.com" target='_blank'><%= fa_icon "envelope-o" %></a>
+                  <a href="https://github.com/A-hu" target='_blank'><%= fa_icon "github" %></a>
+                  <a href="https://www.linkedin.com/in/louis-j-tseng-78745b134/" target='_blank'><%= fa_icon "linkedin" %></a>
+                  <a href="https://twitter.com/learnhu1" target='_blank'><%= fa_icon "twitter" %></a>
+                </div>
               </div>
             </div>
+          </div>
+
         </div>
       </div>
     </div>

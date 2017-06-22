@@ -7,6 +7,7 @@ class PortfoliosController < ApplicationController
 
   def index
     @portfolio_items = Portfolio.by_position
+    @new_portfolio_item = Portfolio.new
   end
 
   def sort

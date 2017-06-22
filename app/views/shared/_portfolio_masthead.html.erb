@@ -1,10 +1,14 @@
-<section class="jumbotron text-center">
+<div class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">Learnhu Portfolio</h1>
-    <p class="lead text-muted">I Know I Do Not Know Anything.</p>
+    <p class="lead text-muted"><em>"I know that I know nothing" - Socratic</em></p>
     <p>
-    <%= link_to 'Find Out More About Me', about_me_path, class: 'btn btn-primary' %>
-    <%= link_to 'Welcom to My Blog', blogs_path, class: 'btn btn-secondary' %>
+    <% if logged_in? :site_admin %>
+      <%= link_to 'New Portfolio', new_portfolio_path(@new_portfolio_item), class: 'btn btn-warning' %>
+    <% else %>
+      <%= link_to 'More About Me', about_me_path, class: 'btn btn-primary' %>
+      <%= link_to 'Welcom to My Blog', blogs_path, class: 'btn btn-secondary' %>
+    <% end %>
     </p>
   </div>
-</section>
+</div>

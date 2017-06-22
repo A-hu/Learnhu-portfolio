@@ -118,7 +118,7 @@ h6, .h6 {
 }
 
 .nav-masthead .nav-link {
-  padding: .25rem 0;
+  padding: .25rem;
   font-weight: bold;
   color: rgba(255,255,255,.5);
   background-color: transparent;
@@ -316,10 +316,6 @@ h6, .h6 {
   margin: 10px auto;
 }
 
-.dropbtn img {
-  margin-left: 50%;
-}
-
 .about-content button {
   margin: 1em;
 }
@@ -347,4 +343,11 @@ h6, .h6 {
   background-color: #4862A3;
   border-radius: 4px;
   margin-bottom: 1em;
+}
+
+.lead {
+  line-height: 2em;
+  display: block;
+  margin: 5% auto;
+  width: 80%;
 }

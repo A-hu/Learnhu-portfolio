@@ -2,8 +2,8 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :blog
 
-  has_many :like_joins, as: :likable
-  has_many :like_users, source: :user, through: :like_joins, as: :comments
+  has_many :like_joins, as: :likable, dependent: :destroy
+  has_many :like_users, source: :user, through: :like_joins, as: :comments, dependent: :destroy
 
   validates :content, presence: true, length: { minimum: 10, maximum: 300 }
 

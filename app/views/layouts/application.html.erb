@@ -26,24 +26,24 @@
 
           <div id="background"></div>
           <!--
-          <%= video_tag(
-            'diving2.mp4',
-            id: 'background',
-            autoplay: true,
-            loop: true,
-            muted: true,
-            poster: 'home.jpg'
+            <%= video_tag(
+              'diving2.mp4',
+              id: 'background',
+              autoplay: true,
+              loop: true,
+              muted: true,
+              poster: 'home.jpg'
           )
-          %>
-          -->
+        %>
+        -->
 
-          <%= render "shared/application_nav", location: 'top' %>
+        <%= render "shared/application_nav", location: 'top' %>
 
-          <%= yield %>
+        <%= yield %>
 
-          <%= render "shared/application_footer" %>
+        <%= render "shared/application_footer" %>
 
-          <%= alerts %>
+        <%= alerts %>
 
         </div>
 

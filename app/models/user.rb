@@ -19,17 +19,17 @@ class User < ApplicationRecord
   has_many :skills, dependent: :destroy
   has_many :watches, dependent: :destroy
 
-  has_many :like_joins
-  has_many :like_blogs, through: :like_joins, source: :likable, source_type: 'Blog'
+  has_many :like_joins, dependent: :destroy
+  has_many :like_blogs, through: :like_joins, source: :likable, source_type: 'Blog', dependent: :destroy
 
-  has_many :like_joins
-  has_many :like_topics, through: :like_joins, source: :likable, source_type: 'Topic'
+  has_many :like_joins, dependent: :destroy
+  has_many :like_topics, through: :like_joins, source: :likable, source_type: 'Topic', dependent: :destroy
 
-  has_many :like_joins
-  has_many :like_portfolios, through: :like_joins, source: :likable, source_type: 'Portfolio'
+  has_many :like_joins, dependent: :destroy
+  has_many :like_portfolios, through: :like_joins, source: :likable, source_type: 'Portfolio', dependent: :destroy
 
-  has_many :like_joins
-  has_many :like_comments, through: :like_joins, source: :likable, source_type: 'Comment'
+  has_many :like_joins, dependent: :destroy
+  has_many :like_comments, through: :like_joins, source: :likable, source_type: 'Comment', dependent: :destroy
 
   accepts_nested_attributes_for :skills, allow_destroy: true, reject_if: lambda { |attrs| attrs['title'].blank? }
   accepts_nested_attributes_for :watches, allow_destroy: true, reject_if: lambda { |attrs| attrs['title'].blank? }

@@ -2,8 +2,8 @@
   <h1>Hi, <%= current_user.first_name if current_user %></h1>
   <h1 class="cover-heading">Welcome!</h1>
   <p class="lead"><%= @brief_about %></p>
-  <p class="lead">
-  <%= link_to "About Me", about_me_path, class: "btn btn-lg btn-secondary" %>
-  </p>
+  <div class="lead">
+    <%= link_to "About Me", about_me_path, class: "btn btn-lg btn-secondary" %>
+  </div>
 </div>
 
