@@ -1,9 +1,9 @@
 <div class="comment-card">
   <div class="card">
-    <div class="card-block">
+    <div class="card-block" id="comment-avatar">
       <div class="row">
         <div class="col-md-2">
-          <%= gravatar_helper comment.user, 60 %>
+          <%= avatar_helper comment.user, 60, 'comment-avatar' %>
         </div>
 
         <div class="col-md-10">
@@ -17,7 +17,7 @@
           <div class="clearfix"></div>
           <div><%= comment.content %></div>
           <div class="comment-attribution">
-            Comment posted by <span class="comment-name"><%= comment.user.first_name %></span> <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago
+            Comment posted by <span class="comment-name"><%= comment.user.name %></span> <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago
           </div>
         </div>
       </div>
