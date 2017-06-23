@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
 
   post 'comment/:id/like', to: 'comments#like', as: 'like_comment'
+  delete 'comment/:id', to: 'comments#destroy', as: 'delete_comment'
 
   get '/about-me', to: 'pages#about'
   get '/tech-news', to: 'pages#tech_news'
