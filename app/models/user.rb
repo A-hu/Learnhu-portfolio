@@ -34,12 +34,20 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :skills, allow_destroy: true, reject_if: lambda { |attrs| attrs['title'].blank? }
   accepts_nested_attributes_for :watches, allow_destroy: true, reject_if: lambda { |attrs| attrs['title'].blank? }
 
+  after_create :auto_subscription
+
   def first_name
     self.name.split.first
   end
 
   def last_name
     self.name.split.last
+  end
+
+  def auto_subscription
+    Topic.all.each do |topic|
+      self.like_topics << topic
+    end
   end
 
   def self.new_with_session(params, session)
