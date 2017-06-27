@@ -1,5 +1,6 @@
 module DeviseTokenAuth
   class ApplicationController < DeviseController
+    # https://github.com/lynndylanhurley/devise_token_auth/issues/343
     protect_from_forgery with: :null_session
     respond_to :json
     include DeviseTokenAuth::Concerns::SetUserByToken

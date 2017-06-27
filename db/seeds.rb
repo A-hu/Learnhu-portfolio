@@ -1,19 +1,23 @@
-User.create!(
+admin = User.create!(
   email: 'admin@test.com',
   password: '123123',
   password_confirmation: '123123',
   name: 'Admin User',
   roles: 'site_admin'
 )
+admin.skip_confirmation!
+admin.save
 
 puts '1 admin user created'
 
-User.create!(
+regular = User.create!(
   email: 'regular@test.com',
   password: '123123',
   password_confirmation: '123123',
   name: 'Regular User',
 )
+regular.skip_confirmation!
+regular.save
 
 puts '1 regular user created'
 
