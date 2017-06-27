@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   ############################################################################################
   ## PeterGate Roles                                                                        ##
   ## The :user role is added by default and shouldn't be included in this list.             ##
@@ -9,9 +10,12 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable,
-    :recoverable, :rememberable, :trackable, :validatable,
-    :omniauthable, omniauth_providers: [:facebook]
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :trackable, :validatable
+
+  include DeviseTokenAuth::Concerns::User
+
+  devise  :confirmable, :omniauthable, omniauth_providers: [:facebook]
 
   validates_presence_of :name
 

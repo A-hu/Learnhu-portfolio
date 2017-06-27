@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks", confirmations: "users/confirmations" }, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register', edit: 'profile' }
 
+  namespace :api, defaults: {format: 'json'} do
+    mount_devise_token_auth_for 'User', at: 'auth'
+  end
+
   resources :portfolios, except: [:show] do
     put :sort, on: :collection
     post :like, on: :member
