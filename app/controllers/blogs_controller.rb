@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   before_action :about
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status, :like]
   before_action :set_sidebar_topics, except: [:update, :create, :destroy, :toggle_status]
-  before_action :check_current_user, only: [:like]
+  before_action :authenticate_user!, only: [:like]
   layout "blog"
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all
 
