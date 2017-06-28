@@ -4,6 +4,7 @@ module DeviseTokenAuth
     protect_from_forgery with: :null_session
     respond_to :json
     include DeviseTokenAuth::Concerns::SetUserByToken
+    include DeviseWhitelist
 
     def resource_data(opts={})
       response_data = opts[:resource_json] || @resource.as_json
