@@ -88,6 +88,9 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    devise_token_auth (0.1.42)
+      devise (> 3.5.2, <= 4.3)
+      rails (< 6)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.2.1)
@@ -329,6 +332,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   delayed_job_active_record
   devise
+  devise_token_auth
   dotenv-rails
   font-awesome-rails
   friendly_id
