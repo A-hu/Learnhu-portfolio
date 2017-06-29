@@ -1,11 +1,17 @@
-class Api::ApplicationController < DeviseTokenAuth::ApplicationController
+module Api
+  class ApplicationController < ActionController::Base
+    include DeviseTokenAuth::Concerns::SetUserByToken
 
-  include DeviseTokenAuth::Concerns::SetUserByToken
-  rescue_from ActionView::MissingTemplate, with: :permission
+    protect_from_forgery with: :null_session
+    respond_to :json
 
-  private
+    # Permission from petergate which is without json responds
+    rescue_from ActionView::MissingTemplate, with: :permission
 
-  def permission
-    render json: { message: 'Permission denied' }, status: 401
+    private
+
+    def permission
+      render json: { message: 'Permission denied' }, status: 401
+    end
   end
 end
