@@ -75,11 +75,12 @@ gem 'redcarpet'
 gem 'coderay'
 gem 'omniauth-facebook'
 gem 'delayed_job_active_record'
+gem 'newrelic_rpm'
 
 # cron jobs
 # Heroku using https://devcenter.heroku.com/articles/scheduler
 # gem 'whenever', '~> 0.9.4'
 
-ruby '2.4.0'
+ruby '2.4.2'
 
 gem 'hirb'
