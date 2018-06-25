@@ -14,10 +14,12 @@ module BlogsHelper
   end
 
   def subscribed_helper user, target
-    if user.like_topics.include?(target)
-      link_to fa_icon('rss', text: "#{target.title}", style: 'opacity: 1'), target
-    else
-      link_to fa_icon('rss', text: "#{target.title}", style: 'opacity: 0.3'), target
+    if user.class == User
+      if user.like_topics.include?(target)
+        link_to fa_icon('rss', text: "#{target.title}", style: 'opacity: 1'), target
+      else
+        link_to fa_icon('rss', text: "#{target.title}", style: 'opacity: 0.3'), target
+      end
     end
   end
 
