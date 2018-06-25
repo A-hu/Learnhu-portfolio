@@ -81,6 +81,6 @@ gem 'newrelic_rpm'
 # Heroku using https://devcenter.heroku.com/articles/scheduler
 # gem 'whenever', '~> 0.9.4'
 
-ruby '2.4.2'
+ruby '2.5.0'
 
 gem 'hirb'
