@@ -19,7 +19,7 @@ module ApplicationHelper
   end
 
   def copyright name, time
-    "&copy: #{time} | <b>#{name}</b> All rights reserved".html_safe
+    "&copy #{time} | <b>#{name}</b> All rights reserved".html_safe
   end
 
   def nav_items
