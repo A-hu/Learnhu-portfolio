@@ -14,7 +14,7 @@ module CurrentUserConcern
     guest
   end
 
-  def authenticate_user!
+  def authenticated
     redirect_to new_user_session_path if current_user.is_a?(GuestUser)
   end
 end

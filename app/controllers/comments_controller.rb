@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticated
   before_action :find_comment, except: [:create]
   before_action :check_author, only: [:destroy]
 

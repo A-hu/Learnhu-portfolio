@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   before_action :about
   before_action :set_sidebar_topics
   before_action :find_topic, only: [:edit, :update, :destroy, :like]
-  before_action :authenticate_user!, only: [:like]
+  before_action :authenticated, only: [:like]
   layout 'blog'
 
   access all: [:show], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
