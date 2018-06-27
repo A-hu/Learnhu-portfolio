@@ -1,7 +1,9 @@
 class Topic < ApplicationRecord
   validates_presence_of :title
   validates_uniqueness_of  :title
+
   has_many :blogs
+
   has_many :like_joins, as: :likable, dependent: :destroy
   has_many :like_users, source: :user, through: :like_joins, as: :topics, dependent: :destroy
 
