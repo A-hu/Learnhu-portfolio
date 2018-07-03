@@ -27,4 +27,8 @@ class Blog < ApplicationRecord
   def self.weekly_news
     where(created_at: (Time.now - 7.days)..Time.now).recent.not_draft
   end
+
+  def clean_body
+    self.body.tr('#`*=_', ' ').tr('  ', ' ')
+  end
 end
